@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>wefwef</p>
+    <span>wefwef</span>
+    <div>wefwef</div>
+</body>
+<script>
+// 1. Написать функцию стрелочную - которая ничего не далает и назвать ее
+//const arrowFunction = () => {}
+
+// 2. Напишите функцию min(a,b), которая возвращает меньшее из чисел a и b
+
+const min = (a,b) => {
+    if (a > b) {return b} 
+    else {return a}
+}
+ // 3. Написать функцию - которая вернет слово большее по количеству букв. Стрелочная. Принимать в качестве аргументов она должна 2 слова
+
+ const max_letters = (word1, word2) => word1.length > word2.length ? word1 : word2
+        
+ //console.log(max_letters("ddd", "aaaaa"));
+
+// 4. Написать функцию. Стрелочную. Принимает аргементом строку - пароль. Возвращает true если пароль длинее или равен 7 символам. Иначе возвращает false
+const pass_length = (string) => string.length < 7
+// console.log(pass_length("eqwйчйчкr"));
+
+// 5. Написать стрелочную функцию, которая перебирает массив слов. Массив слов передается через аргумент. И возвращает нам самое длинное слово
+
+const longestWord = (words) => {
+        let result = words[0];
+        for (let i = 0; i < words.length; i++) {
+            if (result.length < words[i].length) {
+                result = words[i];               
+            }                    
+        }      
+        return result;
+    };
+    //console.log(longestWord('aaa', 'bbbbb', 'ccccccc'));
+
+    // ====== 15.03.2023 =========
+
+    // 6. Задача написать функцию которая в setInterval выводит Ваше имя + случайное число
+
+    const printName = () => {
+        const number = Math.random();
+        console.log('Дима' + number);
+        if (number > 0.8) {
+            clearInterval(id)
+        }
+    }
+    //const id = setInterval(printName, 1000);
+
+    // 7. Задача написать функцию которая принимает 2 аргумента
+    // первый - функция, второй - число
+    // и надо выполнить функцию из первого аргумента столько раз сколько у нас число во втором аргументе
+
+    // myInterval(() => {}, 10)
+
+    function myInterval(func, number) {
+        for (let i = 0; i < number; i++) {
+            func()        
+        }
+    }
+    
+    const getMyName = () => {
+      //console.log("Dima");
+    };
+
+   // console.log(myInterval(getMyName,2));
+
+    // 8. Написать функцию, которая
+    // - вставляет имя в параграф
+    // - имя меняется - передается через аргумент
+
+    // function writeNameintoBody (name) {
+    //     document.body.innerHTML = `<p>${name}</p>`;
+    // }
+    // writeNameintoBody ("Dima")
+
+    // 9. Написать функцию, которая выводит цодержимое элемента. Элемент ссводится как текст в аргументе функции
+
+    const getElementByTag = (tag) => {
+       return document.querySelector(tag)
+     };
+     
+    console.log(getElementByTag('p'));
+    
+
+    </script>
+</html>
